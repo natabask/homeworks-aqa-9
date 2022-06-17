@@ -2,7 +2,7 @@ package ru.netology.page;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import ru.netology.data.GetVerificationCode;
+import ru.netology.data.DBHelper;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -15,7 +15,7 @@ public class VerificationPage {
     }
 
     public DashBoardPage validVerify() {
-        GetVerificationCode getCode = new GetVerificationCode();
+        DBHelper getCode = new DBHelper();
         codeField.setValue(getCode.returnCode());
         verifyButton.click();
         return new DashBoardPage();
